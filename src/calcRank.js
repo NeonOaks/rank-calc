@@ -22,34 +22,30 @@ function balanceVitories (victories, defeats) {
 
             let total = victories - defeats;
             console.log(`Saldo de Vitorias: ${total}`);
-            /*rl.close();*/
-            nivelHero();
+            
+            nivelHero(total);
         });
     });  
 }
 
 function nivelHero(total) {
-    switch(total) {
-        case total <= 10:
-            console.log("Sua quantidade de vitórias é menor que 10. Seu Rank é FERRO!");
-        break;
-        case total <= 10:
-            console.log("Sua quantidade de vitórias for entre 11 e 20. Seu Rank é BRONZE!");
-        break;
-        case total <= 10:
-            console.log("Sua quantidade de vitórias for entre 21 e 50. Seu Rank é PRATA!");
-        break;
-        case total <= 10:
-            console.log("Sua quantidade de vitórias for entre 51 e 80. Seu Rank é OURO!");
-        break;
-        case total <= 10:
-            console.log("Sua quantidade de vitórias for entre 81 e 90. Seu Rank é DIAMANTE!");
-        break;
-        case total <= 10:
-            console.log("Sua quantidade de vitórias for entre 91 e 100. Seu Rank é LENDÁRIO!");
-        break;
-        case total <= 10:
-            console.log("Sua quantidade de vitórias maior ou igual a 101. Seu Rank é IMPORTAL!");
-        break;
+   let rank;
+    if (total <= 10) {
+        rank = "Sua quantidade de vitórias é menor ou igual a 10. Seu Rank é FERRO!";
+    } else if (total >= 11 && total <= 20) {
+        rank = "Sua quantidade de vitórias for entre 11 e 20. Seu Rank é BRONZE!";
+    } else if (total >= 21 && total <= 50) {
+        rank = "Sua quantidade de vitórias for entre 21 e 50. Seu Rank é PRATA!";
+    } else if (total >= 51 && total <= 80) {
+        rank = "Sua quantidade de vitórias for entre 51 e 80. Seu Rank é OURO!";
+    } else if (total >= 81 && total <=90) {
+        rank = "Sua quantidade de vitórias for entre 81 e 90. Seu Rank é DIAMANTE!";
+    } else if (total >= 91 && total <= 100) {
+        rank = "Sua quantidade de vitórias for entre 91 e 100. Seu Rank é LENDÁRIO!";
+    } else {
+        rank = "Sua quantidade de vitórias maior ou igual a 101. Seu Rank é IMORTAL!";
     }
+
+    console.log(`Seu Rank é: ${rank}`);
+    rl.close();
 }
